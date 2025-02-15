@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL TAROT DE TIM</title>
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QLv2NVzWj5TqP6S9oV8bhFepVppgXAh1OgV5+7ZqNp/C3FNE5LrWY5BIc/Wfu1Bo" crossorigin="anonymous">
+
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Fondo */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0b3d3d 0%, #1c1c1b 50%, #3a4d3a 100%);
+            color: #DAA520;
+            font-family: Arial, sans-serif;
+        }
+
+        /*estilos para la barra de envio gratuito*/
+        .top-bar {
+            background-color: #A57B48;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        /*estilos para la barra de navegacion*/
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #081d13;
+            /*color oscuro del fondo*/
+            padding: 15px 30px;
+            color: #fff;
+        }
+
+        /*Estilos del logo*/
+        .logo {
+            font-family: "Arial", sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /*Estilos de los enlaces*/
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            transition: color 0.3;
+        }
+
+        .nav-links li a:hover {
+            color: #A57B48;
+        }
+
+        /*Estilos del icono del carrito*/
+        .cart-icon {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        /* Botones de cada sección */
+        button {
+            background-color: #DAA520;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0b3d3d;
+            color: #DAA520;
+        }
+
+        /* Estilos de cada sección */
+        section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+
+
+
+
+        /* Contenedor principal */
+        #tarot-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('fondo1.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease, background-color 0.5s ease;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            animation: fadeInContainer 1s ease-out;
+        }
+
+        /* Título animado */
+        @keyframes fadeInContainer {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #tarot-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+            color: #f4e8a3;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        /* Animación para el título */
+        @keyframes slideInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Descripción */
+        #tarot-description {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 15px 0;
+            line-height: 1.8;
+            color: #d3d3d3;
+            animation: fadeInText 1.2s ease-out;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Botón */
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #f4e8a3;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            color: #fff;
+            background-color: #f4e8a3;
+            border-color: #f4e8a3;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Secciones */
+        .sections {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            width: 100%;
+            animation: fadeInSections 1s ease-out;
+        }
+
+        @keyframes fadeInSections {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            width: 200px;
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .section:hover {
+            background-color: rgba(199, 164, 47, 0.8);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(199, 164, 47, 0.5);
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+            transition: 0.5s ease;
+            transform: skewX(-15deg);
+        }
+
+        .section:hover::before {
+            left: 100%;
+        }
+
+        .section::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #f4e8a3;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        .section:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Parallax para fondo */
+        #tarot-container {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            animation: parallaxEffect 10s linear infinite;
+        }
+
+        @keyframes parallaxEffect {
+            0% {
+                background-position: center;
+            }
+
+            50% {
+                background-position: center 50%;
+            }
+
+            100% {
+                background-position: center;
+            }
+        }
+
+        /* Mejora para bordes redondeados */
+        .section {
+            border-radius: 18px;
+        }
+
+        .button {
+            border-radius: 12px;
+        }
+
+        /* Animación de parpadeo sutil en los títulos */
+        @keyframes blinkTitle {
+            0% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.7;
+            }
+        }
+
+        #tarot-title {
+            animation: blinkTitle 3s ease-out infinite;
+        }
+    .nav-links1 {            list-style: none;
+            display: flex;
+            gap: 20px;
+}
+    .style1 {list-style: none; display: flex; gap: 20px; font-size: 14; }
+    </style>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+          <table width="1397" height="311" border="0">
+            <tr>
+              <td background="tarot_logo1.png"><table width="957" border="0" align="right">
+                <tr>
+                  <td width="951" height="203"><ul class="style1">
+                    <li><a href="#lecturas">✨ LECTURAS 🌟🃏</a></li>
+                    <li><a href="#cartas">🔮 CARTAS</a></li>
+                    <li><a href="#historias">📖 HISTORIAS</a></li>
+                    <li><a href="#fases-lunares">🌕 FASES LUNARES</a></li>
+                    <li><a href="#carta-astral">🌌 CARTA ASTRAL</a></li>
+                    <li><a href="#contacto">💌 CONTACTO</a></li>
+                  </ul></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+        </div>
+
+        <ul class="nav-links"><li></li>
+        </ul>
+        
+    </nav>
+      
+       <!-- Sección de Carta Astral -->
+<section id="carta-astral" class="container carta-astral">
+    <h2>🌌 Genera tu Carta Astral</h2>
+    <p>Introduce tus datos para descubrir los secretos de tu carta astral.</p>
+    
+    <form id="astro-form">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hora-nacimiento">Hora de nacimiento:</label>
+            <input type="time" id="hora-nacimiento" name="hora-nacimiento" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lugar-nacimiento">Lugar de nacimiento:</label>
+            <input type="text" id="lugar-nacimiento" name="lugar-nacimiento" required>
+        </div>
+
+        <button type="submit">Generar Carta Astral</button>
+    </form>
+    
+    <div id="resultado-carta"></div>
+</section>
+
+
+    <section id="cartas" class="container">
+        <h2>Sacar Cartas</h2>
+        <div class="cartas-container d-flex justify-content-center">
+            <div class="carta m-2" id="carta1"></div>
+            <div class="carta m-2" id="carta2"></div>
+            <div class="carta m-2" id="carta3"></div>
+        </div>
+        <button onClick="sacarCartas()">Sacar Cartas</button>
+    </section>
+
+    <!-- Sección de Fase Lunar -->
+    <section id="fase-lunar" class="container">
+        <h2>Fase Lunar</h2>
+        <button onClick="calcularFaseLunar()">Mostrar Fase Lunar</button>
+        <p id="fase-lunar-resultado"></p>
+    </section>
+
+    <!-- Sección de Preguntas -->
+    <section id="preguntas" class="container">
+        <h2>Preguntas</h2>
+        <textarea class="form-control" placeholder="Escribe tus preguntas aquí..."></textarea>
+    </section>
+
+    <!-- Sección de Carta Astral -->
+    <section id="carta-astral" class="container">
+        <h2>Carta Astral</h2>
+        <button>Generar Carta Astral</button>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="container">
+        <h2>Contacto</h2>
+        <p>Correo: eltarotdetim@gmail.com</p>
+        <p>Teléfono: <a href="tel:+57 316 4161075">+57 316 4161075</a></p>
+    </section>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 EL TAROT DE TIM. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts personalizados -->
+    <script>
+        function calcularFaseLunar() {
+            document.getElementById("fase-lunar-resultado").innerText = "Luna Nueva";
+        }
+
+        // Llamar a la función para cambiar el fondo al cargar la página
+        window.onload = function () {
+            changeBackground(1); // Esto cambiará el fondo a la imagen de la sección 1
+        }
+    </script>
+</body>
+
+<div class="custom-shape-divider-bottom-1738335548">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z" class="shape-fill"></path>
+    </svg>
+</div>

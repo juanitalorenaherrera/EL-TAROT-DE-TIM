@@ -1,0 +1,77 @@
+table, th, td {
+    border: 2px palevioletred solid;
+    margin: 10px auto;
+    border-radius: 5px;
+    table-layout: fixed;
+    background-color: blueviolet;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+#myheader{
+    background-color:magenta;
+    border: 4px goldenrod solid;
+    border-radius: 50%;
+    width: 400px;
+    margin: auto;
+}
+
+html{
+    max-width: 1250px;
+    margin: auto;
+    color:whitesmoke;
+    text-align: center;
+    background-color:indigo;
+}
+
+
+#wrapper {
+    margin: 0px auto;
+    display: grid;
+    max-width: 1200px;
+    min-width: 800px;
+    min-height:100vh;
+    border-color: #d27d93;
+    border-style: double;
+    border-width: 0 10px;
+    padding: 0px 5px;
+    grid-template-columns: 10% auto auto;
+    grid-template-rows: 140px auto 140px ;
+}
+
+#myform {
+    padding: 10px;
+}
+
+img{
+    max-width: 200px;
+}
+
+#horse {
+    background-color: indigo;
+    border: none;
+}
+
+#stuff {
+    max-width: 100px;
+    border: 2px palevioletred solid;
+    margin: 10px;
+    border-radius: 5px;
+    table-layout: fixed;
+    background-color: blueviolet;
+    color: whitesmoke;
+    width: 400px;
+}
+
+#tables{
+    margin:auto;
+    
+}
+
+td, th {
+    max-width: 250px;
+}
+
+#reverse {
+    transform: rotate(180deg);
+}

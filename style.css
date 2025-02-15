@@ -1,0 +1,278 @@
+:root {
+    --verde-oscuro: #006400;
+    --dorado: #DAA520;
+    --negro: #000000;
+    --gris-oscuro: #1A1A1A;
+}
+
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--dorado);
+    background: linear-gradient(to bottom right, var(--verde-oscuro), var(--dorado), var(--negro));
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: var(--verde-oscuro);
+    padding: 30px;
+    text-align: center;
+    color: var(--dorado);
+    font-size: 2.5em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--dorado);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+h2 {
+    color: var(--dorado);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* Button Styles */
+.btn, button {
+    background-color: var(--dorado);
+    color: var(--negro);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover, button:hover {
+    background-color: var(--verde-oscuro);
+    color: var(--dorado);
+    transform: scale(1.05);
+}
+
+/* Card Styles */
+.carta {
+    width: 100px;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px;
+    display: inline-block;
+}
+
+.carta:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    color: var(--dorado);
+}
+
+.modal-content {
+    background-color: var(--gris-oscuro);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+}
+
+#close-modal {
+    float: right;
+    cursor: pointer;
+    color: var(--dorado);
+    font-size: 1.5em;
+}
+.cartas-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.cartas-container img {
+    width: 150px; /* Tamaño ajustado para cada carta */
+    height: auto;
+    border: 2px solid #000; /* Opcional: bordes para las cartas */
+    border-radius: 10px;
+}
+body {
+    background: url('imagenes/tarot-fondo.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    font-family: Arial, sans-serif; /* Fuente legible */
+    color: #fff; /* Texto en blanco para contraste */
+    margin: 0;
+    padding: 0;
+}
+
+.carta-astral {
+    background-color: #2e2b3a;
+    padding: 20px;
+    color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.carta-astral form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.carta-astral input, .carta-astral button {
+    padding: 10px;
+    border: 1px solid #d9d6f3;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.carta-astral button {
+    background-color: #ffd700;
+    color: #2e2b3a;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carta-astral button:hover {
+    background-color: #f5b301;
+}
+.carta-astral {
+    background-color: #1f1d2b;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carta-astral h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carta-astral p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.carta-astral .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.carta-astral label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.carta-astral input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.carta-astral button {
+    background-color: #ffd700;
+    color: #1f1d2b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.carta-astral button:hover {
+    background-color: #e5c100;
+}
+#carta-astral {
+    margin-top: 100px;
+}
+
+/* Estilo para los enlaces de contacto */
+#contacto .contact-link {
+    color: #ffd700; /* Cambia este color según tu diseño */
+    text-decoration: none; /* Opcional: para eliminar el subrayado */
+}
+
+#contacto .contact-link:hover {
+    text-decoration: underline; /* Opcional: subrayado al pasar el mouse */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 0px;
+}
+    
+.div1 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+}
+
+.div2 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 3;
+}
+
+.div3 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 5;
+}
+
+.div4 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 7;
+}
+
+.div5 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 9;
+}
+
+.div6 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 11;
+}
+
